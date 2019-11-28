@@ -1,0 +1,43 @@
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+          <h1> Angular 6 Reactive From Validation</h1>
+  </div>
+  <div class="container">
+    <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+
+      <div class="form-group">
+      <label >First Name</label>
+      <input type="text" formControlName="firstName"  class="form-control" 
+      [ngClass]="{'is-invalid':submitted && f.firstName.errors}" >
+      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required">First Name is Required</div>
+      </div>
+        </div>
+      
+      <label class="form-group">Last Name</label>
+      <input type="text"  class="form-control" formControlName="lastName" 
+       [ngClass]="{'is-valid':submitted && f.lastName.errors}">
+       <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+         <div *ngIf="f.lastName.errors.required">Last Name is Required</div>
+       </div>
+      
+     
+      <label class="form-group">Email</label>
+      <input type="text"  class="form-control" formControlName="Email"
+      [ngClass]="{'is-invalid':submitted && f.lastName.errors}">
+      <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+        <div *ngIf="f.Email.errors.required">Email is Required</div>
+      </div>
+     
+
+      <label class="form-group">Password</label>
+      <input type="password"  class="form-control" formControlName="password"
+      [ngClass]="{'is-invalid':submitted && f.password.errors}">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is Required</div>
+      </div>
+      <button type="submit" id="button" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

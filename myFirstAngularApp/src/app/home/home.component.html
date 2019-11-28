@@ -1,0 +1,38 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to angular {{ title }}!
+
+  </h1>
+
+<img src="https://angular.io/assets/images/logos/angular/angular.png">
+
+
+ <h2>Number:12 </h2>
+
+ <h3>{{place}}</h3>
+ 
+  <div>Months:
+    <select>
+      <option *ngFor="let i of months">{{i}}</option>
+    </select>
+  </div>
+
+
+
+  <p *ngIf="isavailabe">hallllooooooooyyyy</p>
+
+
+  <p *ngIf="a<b">a lessthan b</p>
+
+  <span *ngIf="isavailabe;else condition1">valid</span>
+  <ng-template #condition1>invalid</ng-template><br>
+
+  <span *ngIf="a<b; else condition2">{{a}} is lesser</span>
+  <ng-template #condition2>{{b}} is lesser</ng-template><br><br>
+
+
+  <input type="text" [(ngModel)]="name">
+<h4>{{name}}</h4>
+
+<button (click)= "myClickFunction($event)">Click  Me</button>
+</div>

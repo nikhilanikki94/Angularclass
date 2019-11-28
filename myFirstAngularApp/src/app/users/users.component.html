@@ -1,0 +1,15 @@
+<div class="user">
+
+<h1>USERS ARE...</h1>
+
+<button (click) = "getUsers()">View Users</button>
+
+</div>
+<div  *ngFor="let i of userdata"  >
+  <ul>
+
+    <li >{{i.name}}</li>
+    <li>{{i.email}}</li>
+  </ul>
+  
+</div>
